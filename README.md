@@ -1,8 +1,8 @@
 ### Test Service Integration Repository
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=Ammar-Raneez_Test_Integration_Repo)
+
 [![CodeFactor](https://www.codefactor.io/repository/github/ammar-raneez/test_integration_repo/badge)](https://www.codefactor.io/repository/github/ammar-raneez/test_integration_repo)
-
-
 [![CodeQL](https://github.com/Ammar-Raneez/Test_Integration_Repo/actions/workflows/codeql.yml/badge.svg)](https://github.com/Ammar-Raneez/Test_Integration_Repo/actions/workflows/codeql.yml)
-
-[!Vercel](https://vercelbadge.vercel.app/api/Ammar-Raneez/Test_Integration_Repo)
+![Vercel](https://vercelbadge.vercel.app/api/Ammar-Raneez/Test_Integration_Repo)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Ammar-Raneez_Test_Integration_Repo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Ammar-Raneez_Test_Integration_Repo)
