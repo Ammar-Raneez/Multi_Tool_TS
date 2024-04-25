@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: 'summary_large_image',
+    site: 'https://ammarraneez.vercel.app/',
+    creator: '@Ammar',
     images: [
       {
         url: ogImage.src,
