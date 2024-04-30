@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import ogImage from './og-image.jpg';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { BreadcrumbList, Course, WithContext } from 'schema-dts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -43,9 +44,47 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdBreadcrumbs: WithContext<BreadcrumbList> = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://test-integration-repo.vercel.app/',
+      },
+    ],
+  };
+
+  const jsonLdData: WithContext<Course> = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Test Integration',
+    description:
+      'Test Integration application with a few tools - these tools include: Sonarcloud, CodeQL, CodeFactor, Prettier, ESLint & Commitlint',
+    provider: {
+      '@type': 'Organization',
+      name: 'Ammar',
+      sameAs: 'https://ammarraneez.vercel.app/',
+    },
+  };
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBreadcrumbs),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
